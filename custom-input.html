@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h2>Виставте рейтинг</h2>
+<input type="range" step="1" min="0" max="5" id="step">
+<p id="value">Ваша оціна</p>
+
+<div>
+
+</div>
+
+
+<script>
+    const getStep = document.getElementById('step')
+    const getText = document.getElementById('value')
+
+    const arr = [
+            'дуже погана скажіть що саме вам не сподобалося',
+      'погана звяжіться з нашим менеджером',
+      'добра',
+      'дуже добра',
+      'суперова !',
+      'дуже суперова !',
+    ]
+    //2321312312
+    const addRange = () => {
+        const getValue = getStep.value
+        if (getValue === +getStep.value) {
+            return getText.textContent = 'Ваша оціна ' + arr[+getStep.value] + " " + getValue
+        }
+        // if(getValue == 0){
+        //   return getText.textContent = 'Ваша оціна ' + arr[0] + " " + getValue
+        // }
+
+    }
+
+    getStep.addEventListener('input', addRange)
+
+</script>
+</body>
+</html>
